@@ -8,11 +8,16 @@ var app = express();
 // --> 11)  Mount the body-parser middleware  here
 
 
-/** 1) Meet the node console. */
+
+/** Let’s serve our first string! In Express, routes takes the following structure: app.METHOD(PATH, HANDLER).
+ * METHOD is an http method in lowercase. PATH is a relative path on the server (it can be a string, or even a regular expression).
+ * HANDLER is a function that Express calls when the route is matched.
 
 
-/** 2) A first working Express Server */
+Handlers take the form function(req, res) {...}, where req is the request object, and res is the response object. For example, the handler */
 
+console.log('server runs on port 3000')
+app.get('/', (req, res) => res.send("Hello Express"))
 
 /** 3) Serve an HTML file */
 
@@ -48,9 +53,7 @@ var app = express();
 
 
 
-// This would be part of the basic setup of an Express app
-// but to allow FCC to run tests, the server is already active
-/** app.listen(process.env.PORT || 3000 ); */
+app.listen(process.env.PORT || 3000 );
 
 //---------- DO NOT EDIT BELOW THIS LINE --------------------
 
