@@ -21,6 +21,7 @@ app.get('/', (req, res) => res.send("Hello Express"))
 
 /** 3) Serve an HTML file */
 
+app.get('/form', (req, res) => res.sendFile( __dirname + '/views/index.html'))
 
 /** 4) Serve static assets  */
 
