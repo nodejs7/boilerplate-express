@@ -19,12 +19,15 @@ Handlers take the form function(req, res) {...}, where req is the request object
 console.log('server runs on port 3000')
 app.get('/', (req, res) => res.send("Hello Express"))
 
-/** 3) Serve an HTML file */
+/** 3) Serve an HTML file
+ *  to serve file we use sendFile method
+ * */
 
 app.get('/form', (req, res) => res.sendFile( __dirname + '/views/index.html'))
 
 /** 4) Serve static assets  */
 
+app.use(express.static(__dirname + '/public/'))
 
 /** 5) serve JSON on a specific route */
 
